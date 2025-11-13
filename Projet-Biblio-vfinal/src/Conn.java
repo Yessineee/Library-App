@@ -6,7 +6,10 @@ public class Conn {
     Statement s;
     public Conn(){
         try{
-            c= DriverManager.getConnection("jdbc:mysql://localhost:3306/database_name","database_username (example:root) ","database_password");
+            String dbURL = "jdbc:mysql://localhost:3306/YOUR_DATABASE_NAME";
+            String dbUsername = "YOUR_USERNAME";
+            String dbPassword = "YOUR_PASSWORD";
+            c= DriverManager.getConnection(dbURL,dbUsername,dbPassword);
             s=c.createStatement();
             
         }catch(Exception e){
@@ -15,4 +18,5 @@ public class Conn {
         
     }
 }
+
 
